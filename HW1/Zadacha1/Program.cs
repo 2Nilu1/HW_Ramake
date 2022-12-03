@@ -3,17 +3,16 @@ Console.WriteLine("Введите первое число ");
 int a = int.Parse(Console.ReadLine());
 Console.WriteLine("Введите второе число ");
 int b = int.Parse(Console.ReadLine());
-int max = a;
-int min = b;
-if(a > b) a = max;
+
+if(a > b)
 {
-    Console.Write("max = " + max);
-    Console.WriteLine("min = " + min);
+    Console.WriteLine(a + ">" + b);
+    Console.WriteLine("max = " + a);
+    Console.WriteLine("min = " + b);
 }
-if(b > a) b = max;
+else;
 {
-    Console.Write("max = ");
-    Console.WriteLine(max);
-    Console.Write("min = ");
-    Console.WriteLine(min);
+    Console.WriteLine(b + ">" + a);
+    Console.WriteLine("max = " + b);
+    Console.WriteLine("min = " + a);
 }
