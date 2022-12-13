@@ -44,16 +44,3 @@ double Fun1(double y)
 
 Console.WriteLine($"Координаты точки пересечения: ({Fun(x)}; {Fun1(y)})" );
 
-
-// double Fun(double b1, double b2, double k1, double k2)
-// {
-//     double x = -(b1 - b2) / (k1 - k2);
-//     return x;
-// }
-
-// double Fun1(double k1, double x, double b1)
-// {
-//     double y = k1 * x + b1;
-//     return y;
-// }
-
