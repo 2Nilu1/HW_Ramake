@@ -16,7 +16,7 @@ double x = 0;
 double y = 0;
 double Fun(double x)
 {
-    x = -(b1 - b2) / (k1 - k2);
+    x = (b1 - b2) / (k1 - k2);
     return x;
 }
 
