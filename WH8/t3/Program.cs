@@ -29,9 +29,9 @@ for (int i = 0; i < x; i++)
     Console.WriteLine();
 }
 
-int[,] matres = new int[m,x];//подсмотрел
+int[,] res = new int[m,x];//подсмотрел
 
-void MatCom(int[,] mat1, int[,] mat2, int[,] matres)
+void MatCom(int[,] mat1, int[,] mat2, int[,] res)
 {
     for (int i = 0; i < m; i++)
     {
@@ -42,9 +42,25 @@ void MatCom(int[,] mat1, int[,] mat2, int[,] matres)
             {
                 sum += mat1[i,a] * mat2[a, j];
             }
-            matres[i,j] = sum;
+            res[i,j] = sum;
         }
     }
 }
 
-Console.Write($"{MatCom(matres[m,x])}");
+
+void WriteArray (int[,] array)
+{
+  for (int i = 0; i < m; i++)
+  {
+    for (int j = 0; j < n; j++)
+    {
+      Console.Write(array[i,j] + " ");
+    }
+    Console.WriteLine();
+  }
+}
+
+MatCom(mat1, mat2, res);
+Console.WriteLine();
+WriteArray(res);
+

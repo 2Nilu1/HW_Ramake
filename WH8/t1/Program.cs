@@ -12,13 +12,11 @@ for (int i = 0; i < m; i++)
     for (int j = 0; j < n; j++)
     {
         array[i, j] = new Random().Next(0, 10);
-        Console.Write($"{array[i, j]} ");
     }
-    Console.WriteLine();
 }
 
-Console.Write(Sort(array[m, n]));
-Console.WriteLine();
+// Console.Write(Sort(array));
+// Console.WriteLine();
 
 void Sort(int[,] array)
 {
@@ -26,9 +24,9 @@ void Sort(int[,] array)
     {
         for (int j = 0; j < n; j++)
         {
-            for(int a = 0; a < n; a++)
+            for (int a = 0; a < n - 1; a++)
             {
-                if(array[i,a] < array[i, a + 1])
+                if (array[i, a] < array[i, a + 1])
                 {
                     int temp = array[i, a + 1];
                     array[i, a + 1] = array[i, a];
@@ -40,3 +38,19 @@ void Sort(int[,] array)
 }
 
 
+void PrintArray(int[,] array)
+{
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            Console.Write($"{array[i, j]} ");
+        }
+        Console.WriteLine();
+    }
+}
+
+PrintArray(array);
+Sort(array);
+Console.WriteLine();
+PrintArray(array);

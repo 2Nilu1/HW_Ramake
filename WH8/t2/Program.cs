@@ -10,39 +10,46 @@ for (int i = 0; i < m; i++)
 {
     for (int j = 0; j < n; j++)
     {
-        array[i, j] = new Random().Next(0, 10);
-        Console.Write($"{array[i, j]} ");
+        array[i, j] = new Random().Next(0, 10); 
     }
-    Console.WriteLine();
 }
 
-
-Console.WriteLine($"{MinSumLine(array[m,n])} {SumLine(array[m,n])}");
+int minSumLine = 0;
+int sumLine = SumLine(array, 0);
+for (int i = 1; i < m; i++)
+{
+  int tempSumLine = SumLine(array, i);
+  if (sumLine > tempSumLine)
+  {
+    sumLine = tempSumLine;
+    minSumLine = i;
+  }
+}
 
 
 
 int SumLine(int[,] array, int i)
 {
     int sum = array[i,0];
-    for (int j = 0; j < n; j++)
+    for (int j = 1; j < n; j++)
     {
-        sum = array[i,j];
+        sum += array[i,j];
     }
     return sum;
 }
 
 
-int MinSumLine(int[,] array, int i)
+void PrintArray(int[,] array)
 {
-    int minsum = array[i,0];
-    for (int j = 0; j < n; j++)
+    for (int i = 0; i < m; i++)
     {
-        int tempsum = array[i,0];
-        if(minsum > tempsum)
+        for (int j = 0; j < n; j++)
         {
-            minsum = tempsum;
-            minsum = i;
+            Console.Write($"{array[i, j]} ");
         }
-    }return minsum;
-
+        Console.WriteLine();
+    }
 }
+
+PrintArray(array);
+Console.WriteLine($"{minSumLine+1} - строка с наименьшей суммой элементов");
