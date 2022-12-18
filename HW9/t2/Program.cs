@@ -5,6 +5,15 @@ int a = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите число b, b > 0");
 int b = Convert.ToInt32(Console.ReadLine());
 
+if(a > 0 && b > 0)
+{
+    Console.Write("true");
+}
+else
+{
+    Console.WriteLine("Неверный формат данных!");
+}
+
 
 int Fun(int a, int b)
 {
